@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <button class="call-to-action" role="button" type="button">
+          Aprender
+        </button>
+      </li>
+      <li>
+        <button class="call-to-action" role="button" type="button">
+          Aprender
+        </button>
+      </li>
+    </ul>
+
+    <script>
+      const buttons = document.getElementsByClassName("call-to-action");
+
+      ///Al ser el button un htmlColeciont o Node List no permite ejecutar
+      //el bucle foreach, ya que el mismo solo funciona en arrays
+      /*       buttons.forEach((button) => {
+        button.onclick = () => {
+          alert("Nunca pares de aprender");
+        };
+      }); */
+
+      //Al ejecutar el foreach sobre el nodeList pero con el prototype de los
+      //Arrays y usando el metodo call, pasamos el objeto button y javaScript lo comprende como un array
+      Array.prototype.forEach.call(buttons, (button) => {
+        button.onclick = () => {
+          alert("Nunca pares de aprender");
+        };
+      });
+
+      ////Ejercicios para Call
+      function saludar() {
+        console.log(`Hola hoy ${this.name} ${this.apellido}`);
+      }
+
+      const person = {
+        name: "Phillip",
+        apellido: "Cabrera",
+      };
+      saludar.call(person);
+
+      function caminar(metros, direccion) {
+        console.log(`${this.name} camina ${metros} en direccion ${direccion}`);
+      }
+      caminar.call(person, 400, "sur");
+      ////Ejercicios para Call
+
+      ////Ejercicios para Aply
+      caminar.apply(person, [800, "noreste"]);
+      ////Ejercicios para Aply
+
+      ////Ejercicios para Bind
+      const person1 = {
+        name: "Daniel",
+        apellido: "Sanchez",
+      };
+
+      const saludarDaniel = saludar.bind(person1);
+      saludarDaniel();
+
+      const danielCamina = caminar.bind(person1, 1000);
+      danielCamina("Sureste");
+      ////Ejercicios para Bind
+    </script>
+  </body>
+</html>
