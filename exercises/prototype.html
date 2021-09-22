@@ -42,7 +42,7 @@
       const seiya = Hero("Seiya de Pegasus");
       seiya.saludar(); */
 
-      const heroMethods = {
+      /*     const heroMethods = {
         saludar: function () {
           console.log(`Me llamo ${this.name}`);
         },
@@ -53,12 +53,42 @@
           name: name,
         };
 
-        hero.saludar = heroMethods.saludar();
+        hero.saludar = heroMethods.saludar;
+        return hero;
+      }
+      const seiya = Hero("Seiya de Pegasus");
+      seiya.saludar(); */
+
+      ///Usando Object.create()
+
+      /*     const heroMethods = {
+        saludar: function () {
+          console.log(`Soy el superheroe ${this.name}`);
+        },
+      }; */
+
+      function Hero(name) {
+        const hero = Object.create(Hero.prototype);
+        hero.name = name;
         return hero;
       }
 
-      const seiya = Hero("Seiya de Pegasus");
+      Hero.prototype.saludar = function () {
+        console.log(`Soy el superheroe ${this.name}`);
+      };
+
+      const seiya = new Hero("Seiya de Pegasus");
       seiya.saludar();
+/* 
+      function Persona(nombre, apellido, edad, genero, intereses) {
+        // definiendo de propiedades y métodos
+        this.first = nombre;
+        this.last = apellido;
+
+        //...
+      }
+      Persona.prototype.klk = console.log("Klk Amigo mio"); */
+      ///Usando Object.create()
     </script>
   </body>
 </html>
