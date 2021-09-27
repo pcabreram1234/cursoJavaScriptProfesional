@@ -8,87 +8,25 @@
   </head>
   <body>
     <script>
-      /* const ironMan = {
-        name: "Iron Man",
-      };
-
-      ironMan.saludar = function () {
-        console.log(`Hola soy ${this.name}`);
-      };
-
-      const seiya = {
-        name: "Seiya de Pegasus",
-      };
-
-      seiya.saludar = function () {
-        console.log(`Hola soy ${this.name}`);
-      };
-
-      ironMan.saludar();
-      seiya.saludar(); */
-
-      /*     function Hero(name) {
-        const hero = {
-          name: name,
-        };
-
-        hero.saludar = function () {
-          console.log(`Hola soy ${this.name}`);
-        };
-
-        return hero;
-      }
-
-      const seiya = Hero("Seiya de Pegasus");
-      seiya.saludar(); */
-
-      /*     const heroMethods = {
+      const heroMethods = {
         saludar: function () {
-          console.log(`Me llamo ${this.name}`);
+          console.log(`Hola soy${this.name}`);
         },
       };
 
       function Hero(name) {
         const hero = {
           name: name,
+          saludar: heroMethods.saludar,
         };
 
-        hero.saludar = heroMethods.saludar;
         return hero;
       }
-      const seiya = Hero("Seiya de Pegasus");
-      seiya.saludar(); */
+      const zelda = new Hero("Zelda");
 
-      ///Usando Object.create()
+      zelda.saludar();
 
-      /*     const heroMethods = {
-        saludar: function () {
-          console.log(`Soy el superheroe ${this.name}`);
-        },
-      }; */
-
-      function Hero(name) {
-        const hero = Object.create(Hero.prototype);
-        hero.name = name;
-        return hero;
-      }
-
-      Hero.prototype.saludar = function () {
-        console.log(`Soy el superheroe ${this.name}`);
-      };
-
-      const seiya = new Hero("Seiya de Pegasus");
-      seiya.saludar();
-/* 
-      function Persona(nombre, apellido, edad, genero, intereses) {
-        // definiendo de propiedades y métodos
-        this.first = nombre;
-        this.last = apellido;
-
-        //...
-      }
-      Persona.prototype.klk = console.log("Klk Amigo mio"); */
-      ///Usando Object.create()
+      //Object.create
     </script>
   </body>
 </html>
