@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const htmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
-    App: "./src/App.js",
     Proxy: "./src/utils/proxys.js",
   },
   output: {
@@ -12,7 +11,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new htmlWebPackPlugin(),
     new htmlWebPackPlugin({
       filename: "proxy.html",
       template: "./exercises/proxy.html",

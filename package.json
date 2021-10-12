@@ -5,7 +5,8 @@
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode development --watch"
+    "webpack": "webpack --mode development --watch",
+    "proxy": "webpack --mode development --watch --config webpack.config.prox"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,12 @@
   },
   "homepage": "https://github.com/pcabreram1234/cursoJavaScriptProfesional#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "fast-levenshtein": "^3.0.0"
   }
 }
